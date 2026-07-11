@@ -1,20 +1,19 @@
-import { Space_Grotesk, Inter, IBM_Plex_Mono } from 'next/font/google';
+import { Bricolage_Grotesque, Public_Sans, IBM_Plex_Mono } from 'next/font/google';
 import './globals.css';
-import { site } from '@/lib/content';
+import { site, hero } from '@/lib/content';
 import MotionProvider from '@/components/motion/MotionProvider';
-import ScrollProgressBar from '@/components/motion/ScrollProgressBar';
 
-const spaceGrotesk = Space_Grotesk({
+const bricolage = Bricolage_Grotesque({
   subsets: ['latin'],
-  weight: ['500', '600', '700'],
-  variable: '--font-space-grotesk',
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-bricolage',
   display: 'swap',
 });
 
-const inter = Inter({
+const publicSans = Public_Sans({
   subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  variable: '--font-inter',
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-public-sans',
   display: 'swap',
 });
 
@@ -33,7 +32,7 @@ export const metadata = {
   },
   description: site.description,
   openGraph: {
-    title: `${site.name} — ${site.title}`,
+    title: hero.headline,
     description: site.description,
     url: site.url,
     siteName: site.name,
@@ -43,7 +42,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${site.name} — ${site.title}`,
+    title: hero.headline,
     description: site.description,
   },
 };
@@ -52,13 +51,10 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${inter.variable} ${ibmPlexMono.variable}`}
+      className={`${bricolage.variable} ${publicSans.variable} ${ibmPlexMono.variable}`}
     >
-      <body className="font-body text-ink antialiased">
-        <MotionProvider>
-          <ScrollProgressBar />
-          {children}
-        </MotionProvider>
+      <body className="font-body antialiased">
+        <MotionProvider>{children}</MotionProvider>
       </body>
     </html>
   );

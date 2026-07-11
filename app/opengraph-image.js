@@ -1,5 +1,5 @@
 import { ImageResponse } from 'next/og';
-import { site } from '@/lib/content';
+import { hero, site } from '@/lib/content';
 
 export const dynamic = 'force-static';
 export const size = { width: 1200, height: 630 };
@@ -16,37 +16,37 @@ export default function Image() {
           flexDirection: 'column',
           justifyContent: 'center',
           padding: '80px',
-          backgroundColor: '#0A0E27',
+          backgroundColor: '#05070D',
           backgroundImage:
-            'radial-gradient(60% 60% at 50% 40%, rgba(79,70,229,0.45) 0%, rgba(37,99,235,0.25) 35%, rgba(14,165,233,0.08) 60%, rgba(10,14,39,0) 80%)',
+            'radial-gradient(ellipse at 50% 46%, rgba(56,189,248,0.12) 0%, rgba(5,7,13,0.6) 60%, rgba(5,7,13,0.96) 100%)',
         }}
       >
         <div
           style={{
             display: 'flex',
-            fontSize: 22,
+            fontSize: 20,
             letterSpacing: 4,
             textTransform: 'uppercase',
-            color: '#0EA5E9',
+            color: '#38BDF8',
             marginBottom: 28,
           }}
         >
-          Business Intelligence Team Lead // Analytics Engineer
+          No Visibility · Unreliable · Too Late
         </div>
         <div
           style={{
             display: 'flex',
-            fontSize: 64,
-            fontWeight: 600,
-            color: '#ffffff',
-            lineHeight: 1.15,
+            fontSize: 56,
+            fontWeight: 500,
+            color: '#E2E8F0',
+            lineHeight: 1.2,
             maxWidth: 980,
           }}
         >
-          {site.name} builds enterprise reporting platforms leadership trusts.
+          {hero.headline}
         </div>
-        <div style={{ display: 'flex', fontSize: 26, color: '#94A3B8', marginTop: 36 }}>
-          Open to opportunities — UK · UAE · Canada
+        <div style={{ display: 'flex', fontSize: 24, color: '#64748B', marginTop: 36 }}>
+          {site.name} — {site.title}
         </div>
       </div>
     ),

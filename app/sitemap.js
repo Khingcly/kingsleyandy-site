@@ -1,4 +1,4 @@
-import { site, work } from '@/lib/content';
+import { site, caseStudies } from '@/lib/content';
 
 export const dynamic = 'force-static';
 
@@ -9,8 +9,8 @@ export default function sitemap() {
       lastModified: new Date(),
       priority: 1,
     },
-    ...work.caseStudies.map((cs) => ({
-      url: `${site.url}/case-studies/${cs.slug}`,
+    ...caseStudies.map((cs) => ({
+      url: `${site.url}/work/${cs.slug}`,
       lastModified: new Date(),
       priority: 0.8,
     })),

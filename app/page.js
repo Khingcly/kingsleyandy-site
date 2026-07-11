@@ -1,27 +1,19 @@
-import Nav from '@/components/Nav';
-import Hero from '@/components/Hero';
-import About from '@/components/About';
-import Experience from '@/components/Experience';
-import WorkGrid from '@/components/WorkGrid';
-import Skills from '@/components/Skills';
-import Testimonials from '@/components/Testimonials';
-import Contact from '@/components/Contact';
-import Footer from '@/components/Footer';
+import HeroChaos from '@/components/HeroChaos';
+import Ingestion from '@/components/Ingestion';
+import Modeling from '@/components/Modeling';
+import Dashboard from '@/components/Dashboard';
+import Resolution from '@/components/Resolution';
+import MiniNav from '@/components/MiniNav';
 
 export default function Home() {
   return (
-    <>
-      <Nav />
-      <main>
-        <Hero />
-        <About />
-        <Experience />
-        <WorkGrid />
-        <Skills />
-        <Testimonials />
-        <Contact />
-      </main>
-      <Footer />
-    </>
+    <div style={{ position: 'relative', width: '100%' }}>
+      <HeroChaos />
+      <Ingestion />
+      <Modeling />
+      <Dashboard />
+      <Resolution />
+      <MiniNav />
+    </div>
   );
 }
