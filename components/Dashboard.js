@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 import { useInView } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { dashboard, caseStudies } from '@/lib/content';
 import CountUp from '@/components/motion/CountUp';
 
@@ -33,6 +34,27 @@ function CaseCard({ cs, index }) {
         transitionTimingFunction: 'ease',
       }}
     >
+      {cs.image && (
+        <div
+          style={{
+            position: 'relative',
+            width: 'calc(100% + 52px)',
+            margin: '-26px -26px 0',
+            aspectRatio: '16 / 10',
+            borderRadius: '14px 14px 0 0',
+            overflow: 'hidden',
+          }}
+        >
+          <Image
+            src={cs.image}
+            alt={cs.imageAlt}
+            fill
+            loading="lazy"
+            sizes="(max-width: 640px) 100vw, 380px"
+            style={{ objectFit: 'cover' }}
+          />
+        </div>
+      )}
       <div
         style={{
           fontFamily: 'var(--font-ibm-plex-mono), monospace',

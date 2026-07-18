@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useInView } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { site, contact } from '@/lib/content';
 import CountUp from '@/components/motion/CountUp';
 
@@ -210,6 +211,28 @@ export default function CaseStudyPage({ cs }) {
 
       <main style={{ background: '#F8FAFC', padding: 'clamp(64px,10vw,110px) clamp(20px,6vw,64px)' }}>
         <div style={{ maxWidth: 720, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 'clamp(56px,8vw,88px)' }}>
+          {cs.image && (
+            <div
+              style={{
+                position: 'relative',
+                width: '100%',
+                aspectRatio: '16 / 10',
+                borderRadius: 14,
+                border: '1px solid #E2E8F0',
+                overflow: 'hidden',
+                boxShadow: '0 1px 2px rgba(15,23,42,0.04)',
+              }}
+            >
+              <Image
+                src={cs.image}
+                alt={cs.imageAlt}
+                fill
+                loading="lazy"
+                sizes="(max-width: 760px) 100vw, 720px"
+                style={{ objectFit: 'cover' }}
+              />
+            </div>
+          )}
           <RevealSection label="Problem" text={cs.problem} />
           <RevealSection label="Approach" text={cs.approach} />
           <RevealSection label="Outcome" text={cs.outcome} badges={cs.kpis} />
