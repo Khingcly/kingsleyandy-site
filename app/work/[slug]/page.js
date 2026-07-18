@@ -18,6 +18,9 @@ export async function generateMetadata({ params }) {
   return {
     title: cs.title,
     description: cs.oneLiner,
+    alternates: {
+      canonical: `${site.url}/work/${cs.slug}`,
+    },
     openGraph: {
       title: `${cs.title} — ${site.name}`,
       description: cs.oneLiner,

@@ -268,6 +268,23 @@ export default function CaseStudyPage({ cs }) {
               All case studies
             </Link>
             <a
+              href={contact.cvHref}
+              download
+              className="footer-ghost"
+              style={{
+                background: '#fff',
+                border: '1px solid #E2E8F0',
+                color: '#1E293B',
+                padding: '12px 20px',
+                borderRadius: 8,
+                fontSize: 13.5,
+                fontWeight: 600,
+                transition: 'border-color 0.2s ease, color 0.2s ease',
+              }}
+            >
+              Download CV
+            </a>
+            <a
               href={`mailto:${contact.email}`}
               className="mini-cta"
               style={{
