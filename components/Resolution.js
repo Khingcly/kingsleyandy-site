@@ -58,11 +58,75 @@ export default function Resolution() {
 
         <div
           style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 16,
+            marginTop: 36,
+            padding: '16px 22px',
+            textAlign: 'left',
+            background: '#FFFFFF',
+            border: '1px solid #BFDBFE',
+            borderRadius: 16,
+            boxShadow: '0 1px 2px rgba(15,23,42,0.04), 0 8px 24px -12px rgba(37,99,235,0.28)',
+          }}
+        >
+          <span
+            aria-hidden="true"
+            style={{
+              flexShrink: 0,
+              width: 46,
+              height: 46,
+              display: 'grid',
+              placeItems: 'center',
+              borderRadius: 12,
+              background: '#DBEAFE',
+              color: '#2563EB',
+            }}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M22 9 12 4 2 9l10 5 10-5Z" />
+              <path d="M6 11.5V16c0 1.4 2.7 3 6 3s6-1.6 6-3v-4.5" />
+              <path d="M22 9v6" />
+            </svg>
+          </span>
+          <span style={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+            <span
+              style={{
+                fontFamily: 'var(--font-bricolage), sans-serif',
+                fontWeight: 600,
+                fontSize: 18,
+                lineHeight: 1.2,
+                color: '#0F172A',
+              }}
+            >
+              {resolution.featuredCredential.degree}
+            </span>
+            <span style={{ fontSize: 14, color: '#475569' }}>{resolution.featuredCredential.institution}</span>
+          </span>
+          <span
+            style={{
+              alignSelf: 'flex-start',
+              fontFamily: 'var(--font-ibm-plex-mono), monospace',
+              fontSize: 11,
+              fontWeight: 500,
+              letterSpacing: '0.08em',
+              color: '#1E3A8A',
+              background: '#DBEAFE',
+              padding: '4px 9px',
+              borderRadius: 999,
+            }}
+          >
+            {resolution.featuredCredential.year}
+          </span>
+        </div>
+
+        <div
+          style={{
             display: 'flex',
             flexWrap: 'wrap',
             justifyContent: 'center',
             gap: 10,
-            marginTop: 32,
+            marginTop: 18,
           }}
         >
           {resolution.credentials.map((cred) => (
