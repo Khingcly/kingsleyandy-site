@@ -70,25 +70,6 @@ export default function Resolution() {
             boxShadow: '0 1px 2px rgba(15,23,42,0.04), 0 8px 24px -12px rgba(37,99,235,0.28)',
           }}
         >
-          <span
-            aria-hidden="true"
-            style={{
-              flexShrink: 0,
-              width: 46,
-              height: 46,
-              display: 'grid',
-              placeItems: 'center',
-              borderRadius: 12,
-              background: '#DBEAFE',
-              color: '#2563EB',
-            }}
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M22 9 12 4 2 9l10 5 10-5Z" />
-              <path d="M6 11.5V16c0 1.4 2.7 3 6 3s6-1.6 6-3v-4.5" />
-              <path d="M22 9v6" />
-            </svg>
-          </span>
           <span style={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
             <span
               style={{

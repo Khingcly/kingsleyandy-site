@@ -122,7 +122,13 @@ export default function Ingestion() {
                 color: '#94A3B8',
               }}
             >
-              {p}
+              {Array.isArray(p)
+                ? p.map((line) => (
+                    <span key={line} style={{ display: 'block' }}>
+                      {line}
+                    </span>
+                  ))
+                : p}
             </p>
           ))}
         </div>
