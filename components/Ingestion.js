@@ -120,6 +120,7 @@ export default function Ingestion() {
                 fontSize: 16,
                 lineHeight: 1.75,
                 color: '#94A3B8',
+                textAlign: Array.isArray(p) ? 'left' : undefined,
               }}
             >
               {Array.isArray(p)

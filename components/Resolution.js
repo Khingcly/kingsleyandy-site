@@ -58,56 +58,11 @@ export default function Resolution() {
 
         <div
           style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: 16,
-            marginTop: 36,
-            padding: '16px 22px',
-            textAlign: 'left',
-            background: '#FFFFFF',
-            border: '1px solid #BFDBFE',
-            borderRadius: 16,
-            boxShadow: '0 1px 2px rgba(15,23,42,0.04), 0 8px 24px -12px rgba(37,99,235,0.28)',
-          }}
-        >
-          <span style={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
-            <span
-              style={{
-                fontFamily: 'var(--font-bricolage), sans-serif',
-                fontWeight: 600,
-                fontSize: 18,
-                lineHeight: 1.2,
-                color: '#0F172A',
-              }}
-            >
-              {resolution.featuredCredential.degree}
-            </span>
-            <span style={{ fontSize: 14, color: '#475569' }}>{resolution.featuredCredential.institution}</span>
-          </span>
-          <span
-            style={{
-              alignSelf: 'flex-start',
-              fontFamily: 'var(--font-ibm-plex-mono), monospace',
-              fontSize: 11,
-              fontWeight: 500,
-              letterSpacing: '0.08em',
-              color: '#1E3A8A',
-              background: '#DBEAFE',
-              padding: '4px 9px',
-              borderRadius: 999,
-            }}
-          >
-            {resolution.featuredCredential.year}
-          </span>
-        </div>
-
-        <div
-          style={{
             display: 'flex',
             flexWrap: 'wrap',
             justifyContent: 'center',
             gap: 10,
-            marginTop: 18,
+            marginTop: 32,
           }}
         >
           {resolution.credentials.map((cred) => (
