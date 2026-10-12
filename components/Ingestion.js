@@ -120,18 +120,46 @@ export default function Ingestion() {
                 fontSize: 16,
                 lineHeight: 1.75,
                 color: '#94A3B8',
-                textAlign: Array.isArray(p) ? 'left' : undefined,
               }}
             >
-              {Array.isArray(p)
-                ? p.map((line) => (
-                    <span key={line} style={{ display: 'block' }}>
-                      {line}
-                    </span>
-                  ))
-                : p}
+              {p}
             </p>
           ))}
+
+          <div
+            style={{
+              marginTop: 36,
+              textAlign: 'left',
+              border: '1px solid rgba(56,189,248,0.18)',
+              borderRadius: 14,
+              background: 'rgba(15,23,42,0.55)',
+              overflow: 'hidden',
+            }}
+          >
+            {ingestion.ledger.map((row, i) => (
+              <div
+                key={row.label}
+                className="ledger-row"
+                style={{
+                  padding: '15px clamp(16px,3vw,24px)',
+                  borderTop: i === 0 ? 'none' : '1px solid rgba(148,163,184,0.12)',
+                }}
+              >
+                <span
+                  style={{
+                    fontFamily: 'var(--font-ibm-plex-mono), monospace',
+                    fontSize: 11,
+                    letterSpacing: '0.16em',
+                    textTransform: 'uppercase',
+                    color: '#38BDF8',
+                  }}
+                >
+                  {row.label}
+                </span>
+                <span style={{ fontSize: 15, lineHeight: 1.6, color: '#E2E8F0' }}>{row.value}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

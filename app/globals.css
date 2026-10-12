@@ -116,3 +116,17 @@ body {
   border-color: #2563eb;
   color: #2563eb;
 }
+
+.ledger-row {
+  display: grid;
+  grid-template-columns: 108px 1fr;
+  column-gap: 20px;
+  align-items: baseline;
+}
+
+@media (max-width: 560px) {
+  .ledger-row {
+    grid-template-columns: 1fr;
+    row-gap: 6px;
+  }
+}
